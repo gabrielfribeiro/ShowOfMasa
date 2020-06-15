@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Show of Masa</title>
+    <style>
+        canvas {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var canvas, largura, altura = 0;
+
+        var estadoAtual,
+            estados = {
+                jogar: 0,
+                jogando: 1,
+                perdeu: 2
+            },
+            score;
+
+        function main() {
+            altura = window.innerHeight;
+            largura = window.innerWidth;
+
+            if (largura >= 500) {
+                largura = 1200;
+                altura = 700;
+            }
+
+            canvas = document.createElement("canvas");
+            canvas.width = largura;
+            canvas.height = altura;
+
+            ctx = canvas.getContext("2d");
+            document.body.appendChild(canvas);
+
+            estadoAtual = estados.jogar;
+            criaTela();
+        }
+
+        function criaTela() {
+            if (estadoAtual == estados.jogar) {
+                menuIniciar();
+            } else if (estadoAtual = estados.jogando) {
+                // cria telas de perguntas
+            } else {
+                // tela de perdeu
+            }
+        }
+
+        function menuIniciar() {
+            ctx.fillStyle = "#FDD163";
+            ctx.fillRect(0, 0, 500, altura);
+            ctx.fillStyle = "#302C49";
+            ctx.fillRect(500, 0, largura, altura);
+
+            ctx.fillStyle = "#FFF";
+            ctx.font = "60px Times New Roman";
+            ctx.fillText("Lei Geral", 30, 125);
+            ctx.fillText("de Proteção", 30, 200);
+            ctx.fillText("de Dados", 30, 275);
+            ctx.fillText("Pessoais", 30, 350);
+
+            ctx.fillStyle = "#B48221";
+            ctx.font = "20px Times New Roman";
+            ctx.fillText("A legislação brasileira que regula", 30, 400);
+            ctx.fillText("as atividades de tratamento de", 30, 425);
+            ctx.fillText("dados pessoais", 30, 450);
+
+            ctx.fillStyle = "#FFF";
+            ctx.font = "120px Times New Roman";
+            ctx.fillText("Show", 700, 550);
+            ctx.fillText("Of Massa", 700, 650);
+
+            // document.addEventListener("mousedown", clique);
+        }
+
+        function clique(event) {
+            alert("Ramps lindo de bonito");
+            ctx.fillStyle = "#FDD163";
+            ctx.fillRect(0, 0, largura, altura);
+        }
+
+        main();
+    </script>
+</body>
+</html>
