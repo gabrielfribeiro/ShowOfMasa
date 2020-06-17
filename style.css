@@ -13,7 +13,7 @@ body{
 }
 
 #sessaoPergunta{
-    display: block;
+    display: none;
 }
 
 .container-fluid{
@@ -27,6 +27,7 @@ body{
 .ladoDireito{
     background-color: #302C49;
     height: 600px;
+    display: none;
 }
 
 .ladoEsquerdo{
