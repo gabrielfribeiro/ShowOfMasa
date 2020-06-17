@@ -1,9 +1,19 @@
+body{
+    font-family: sans-serif;
+}
+
 #sessaoInicial{
     display: block;
 }
 
-#sessaoPergunta, #sessaoDificuldade{
+#sessaoDificuldade{
     display: none;
+    background-color: #302C49;
+    height: 600px;
+}
+
+#sessaoPergunta{
+    display: block;
 }
 
 .container-fluid{
@@ -135,4 +145,71 @@
 
 .icone img{
     height: 75px;
+}
+
+.tituloDificuldades{
+    margin-top: 40px;
+    margin-left: 30px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #FFF6E4;
+}
+
+.selecaoDificuldade{
+    list-style: none;
+    color:#bd8d2a;
+    margin-bottom: 0px;
+    margin-top: 30px;
+    padding: 0;
+    text-align: center;
+}
+
+.selecaoDificuldade li{
+    display: inline;
+    padding: 5px;
+    font-size: 25px;
+    margin: 0px 15px;
+    
+}
+
+.selecaoDificuldade li:hover{
+    cursor: pointer;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.btnDificuldade{
+    text-align: center;
+}
+
+.btnDificuldade button{
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    color: #bd8d2a;
+    font-size: 35px;
+    padding: 5px 15px;
+    letter-spacing: 1px;
+    margin-top: 100px;
+}
+
+.btnDificuldade button:hover{
+    box-shadow: 0 5px 15px 3px black;
+}
+
+.ladoEsquerdoDificuldade{
+    background-color:#fdd163;
+    padding: 25px 30px;
+}
+
+.ladoEsquerdoDificuldade h2{
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 25px;
+    color: #302C49;
+    font-family: sans-serif;
+}
+
+.centroDificuldade{
+    margin-top: 150px;
+
 }
