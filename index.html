@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Show of Massa</title>
     <link rel="shortcut icon" href="img/cyber-security.png" type="image/x-icon" />
+    <script src="script.js"></script>
 
 </head>
 
@@ -33,7 +34,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="col-md-8 unfiled">
+                <section id="ladoDireito" class="col-md-8 unfiled">
                     <div class="ladoDireito col-md-12">
                         <ul class="listaInicial">
                             <li>Sobre</li>
@@ -63,15 +64,15 @@
                         </div>
                         <div class="col-md-8">
                             <ul class="selecaoDificuldade">
-                                <li>Fácil</li>
-                                <li>Médio</li>
-                                <li>Difícil</li>
-                                <li>Insano</li>
+                                <li onclick="modoJogo(1)">Fácil</li>
+                                <li onclick="modoJogo(2)">Médio</li>
+                                <li onclick="modoJogo(3)">Difícil</li>
+                                <li onclick="modoJogo(4)">Insano</li>
                             </ul>
                         </div>
                     </div>
                     <footer class="btnDificuldade">
-                        <button>Jogar</button>
+                        <button onclick="mudarTela('sessaoDificuldade','sessaoPergunta',1)">Jogar</button>
                     </footer>
                 </section>
 
