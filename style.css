@@ -1,40 +1,45 @@
-body{
+body {
     font-family: sans-serif;
 }
 
-#sessaoInicial{
+a {
+    text-decoration: none !important;
+}
+
+#sessaoInicial {
     display: block;
 }
 
-#sessaoDificuldade{
+#sessaoDificuldade {
     display: none;
     background-color: #302C49;
     height: 600px;
 }
 
-#sessaoPergunta{
-    display: block;
+#sessaoPergunta {
+    display: none;
 }
 
-.container-fluid{
+.container-fluid {
     margin-top: 50px;
 }
 
-.unfiled{
+.unfiled {
     padding: 0 !important;
 }
 
-.ladoDireito{
+.ladoDireito {
+    display: block;
     background-color: #302C49;
     height: 600px;
 }
 
-.ladoEsquerdo{
+.ladoEsquerdo {
     background-color: #fdd163;
     height: 600px;
 }
 
-.ladoEsquerdo h1{
+.ladoEsquerdo h1 {
     font-family: sans-serif;
     font-size: 50px;
     color: #302C49;
@@ -42,112 +47,151 @@ body{
     padding-top: 20px;
 }
 
-.p1{
+.p1 {
     font-family: sans-serif;
-    color: #bd8d2a; 
-    padding-left: 15px; 
+    color: #bd8d2a;
+    padding-left: 15px;
     margin-top: 15px;
 }
 
-.p2{
+.p2 {
     font-family: sans-serif;
     color: #302C49;
-    padding-left: 15px;  
+    padding-left: 15px;
     margin-top: 25px;
 }
 
-.ladoEsquerdo button{ 
+.ladoEsquerdo button {
     margin-bottom: 15px;
     margin-left: 15px;
 }
 
-.listaInicial{
+.listaInicial {
     list-style: none;
 }
 
-.listaInicial li{
-    display: inline;   
+.listaInicial li {
+    display: inline;
+    cursor: pointer;
 }
 
-.btnSaibaMais{
+.linkSaibaMais {
     background-color: transparent;
     border: 1px solid #FFF6E4;
     color: #bd8d2a;
     font-size: 15px;
     padding: 5px;
     letter-spacing: 1px;
+    outline: none;
+    margin-left: 15px;
 }
 
-.btnSaibaMais:hover{
+.linkSaibaMais:hover {
     background-color: #FFF6E4;
+    color: #bd8d2a;
 }
 
-.listaInicial{
+.listaInicial {
     float: right;
     color: #FFF6E4;
     margin-top: 20px;
     margin-right: 20px;
 }
 
-.listaInicial li{
+.listaInicial li {
     margin-left: 35px;
     font-size: 15px;
 }
 
-.tituloInicial{
+.tituloInicial {
     float: right;
-    margin-top: 300px;
+    margin-top: 50px;
 }
 
-.tituloInicial h1{
+.tituloInicial h1 {
     font-size: 90px;
     color: #FFF6E4;
     padding-left: 100px;
 }
 
-.inserirNome{
-  padding-top: 225px;
-  padding-left: 200px;
-  color:#FFF6E4;
-  text-transform: uppercase;
-  position: absolute;
-  margin: auto;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
+.inserirNome {
+    margin-top: 175px;
+    color: #FFF6E4;
+    text-transform: uppercase;
 }
 
-.inserirNome input{
-    background-color: rgb(65,60,91);
-    border: 2px solid rgb(65,60,91);
+.inserirNome input {
+    background-color: rgb(65, 60, 91);
+    border: 1px solid rgb(65, 60, 91);
     padding: 5px;
     font-size: 15px;
-    width: 250px;
-    color:#FFF6E4;
+    width: 70%;
+    color: #FFF6E4;
     outline: none;
 }
 
-.inserirNome button{
-    width: 150px;
+.inserirNome button {
+    width: 30%;
     padding: 5px;
     outline: none;
     background-color: transparent;
     border: 1px solid #FFF6E4;
-    color:#FFF6E4;
+    color: #FFF6E4;
     margin-left: -5px;
 }
 
-.icone{
+.icone {
     text-align: center;
     margin-top: 35px;
 }
 
-.icone img{
+.icone img {
     height: 75px;
 }
 
-.tituloDificuldades{
+#manualJogo,
+#sobreJogo {
+    display: none;
+    background-color: #302C49;
+    height: 600px;
+    color: #FFF6E4;
+    text-align: center;
+    padding: 50px 0 0 0;
+    line-height: 20px;
+}
+
+#manualJogo h2,
+#sobreJogo h2 {
+    font-size: 35px;
+}
+
+#manualJogo p,
+#sobreJogo p {
+    margin-top: 25px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    line-height: 25px;
+}
+
+#manualJogo .descricao,
+#sobreJogo .descricao {
+    padding: 0 50px;
+}
+
+.voltarTelaInicial {
+    margin: 25px 0 0 0;
+    text-align: center;
+}
+
+.voltarTelaInicial img {
+    height: 50px;
+    cursor: pointer;
+}
+
+
+/* TELA DIFICULDADE */
+
+.tituloDificuldades {
     margin-top: 40px;
     margin-left: 30px;
     font-family: sans-serif;
@@ -155,33 +199,32 @@ body{
     color: #FFF6E4;
 }
 
-.selecaoDificuldade{
+.selecaoDificuldade {
     list-style: none;
-    color:#bd8d2a;
+    color: #bd8d2a;
     margin-bottom: 0px;
     margin-top: 30px;
     padding: 0;
     text-align: center;
 }
 
-.selecaoDificuldade li{
+.selecaoDificuldade li {
     display: inline;
     padding: 5px;
     font-size: 25px;
     margin: 0px 15px;
-    
 }
 
-.selecaoDificuldade li:hover{
+.selecaoDificuldade li:hover {
     cursor: pointer;
     box-shadow: 0 8px 6px -6px black;
 }
 
-.btnDificuldade{
+.btnDificuldade {
     text-align: center;
 }
 
-.btnDificuldade button{
+.btnDificuldade button {
     background-color: transparent;
     border: 1px solid transparent;
     outline: none;
@@ -192,16 +235,16 @@ body{
     margin-top: 100px;
 }
 
-.btnDificuldade button:hover{
+.btnDificuldade button:hover {
     box-shadow: 0 5px 15px 3px black;
 }
 
-.ladoEsquerdoDificuldade{
-    background-color:#fdd163;
+.ladoEsquerdoDificuldade {
+    background-color: #fdd163;
     padding: 25px 30px;
 }
 
-.ladoEsquerdoDificuldade h2{
+.ladoEsquerdoDificuldade h2 {
     margin: 0;
     text-transform: uppercase;
     font-size: 25px;
@@ -209,7 +252,6 @@ body{
     font-family: sans-serif;
 }
 
-.centroDificuldade{
+.centroDificuldade {
     margin-top: 150px;
-
 }

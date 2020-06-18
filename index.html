@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Show of Massa</title>
     <link rel="shortcut icon" href="img/cyber-security.png" type="image/x-icon" />
-
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -16,36 +16,71 @@
         <div class="container">
             <div class="row">
                 <!-- Tela inicial -->
-                <section id="sessaoInicial" class="col-md-4 unfiled">
-                    <div class="ladoEsquerdo col-md-12">
-                        <h1>Lei Geral de Proteção de Dados Pessoais </h1>
-                        <div class="p1">
-                            <p>A legislação brasileira que regula as atividades de tratamento de dados
-                                pessoais
-                            </p>
-                        </div>
-                        <button class="btnSaibaMais">SAIBA MAIS</button>
-                        <div class="icone col-md-12 unfiled">
-                            <img src="img/cyber-security.png">
-                        </div>
-                        <div class="p2">
-                            <p>Inicie a partida e explore os conceitos abordados pela legislação</p>
+                <section id="sessaoInicial" class="col-md-12 unfiled">
+                    <div class="col-md-4 unfiled">
+                        <div class="ladoEsquerdo col-md-12">
+                            <h1>Lei Geral de Proteção de Dados Pessoais </h1>
+                            <div class="p1">
+                                <p>A legislação brasileira que regula as atividades de tratamento de dados pessoais
+                                </p>
+                            </div>
+                            <a class="linkSaibaMais" href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm" target="_blank">SAIBA MAIS</a>
+                            <div class="icone col-md-12 unfiled">
+                                <img src="img/cyber-security.png">
+                            </div>
+                            <div class="p2 col-md-12">
+                                <p>Inicie a partida e explore os conceitos abordados pela legislação</p>
+                            </div>
                         </div>
                     </div>
-                </section>
-                <section class="col-md-8 unfiled">
-                    <div class="ladoDireito col-md-12">
-                        <ul class="listaInicial">
-                            <li>Sobre</li>
-                            <li>Manual do jogo</li>
-                        </ul>
-                        <div class="inserirNome">
-                            <h6>Qual é o seu nome ?</h6>
-                            <input type="text" name="Nome" placeholder="NOME">
-                            <button>Continuar</button>
+                    <div class="col-md-8 unfiled" id="ladoDireitoInicial">
+                        <div class="ladoDireito col-md-12">
+                            <ul class="listaInicial">
+                                <li onclick="mudarTela('ladoDireitoInicial', 'sobreJogo')">Sobre</li>
+                                <li onclick="mudarTela('ladoDireitoInicial', 'manualJogo')">Manual do jogo</li>
+                            </ul>
+                            <div class="inserirNome col-md-8 col-md-offset-2">
+                                <div class="col-md-12 unfiled">
+                                    <h6>Qual é o seu nome ?</h6>
+                                </div>
+                                <div class="col-md-12 unfiled">
+                                    <form>
+                                        <input type="text" id="nomeJogador" name="nome" placeholder="NOME">
+                                        <button type="button" onclick="continuarDificuldade('sessaoInicial', 'sessaoDificuldade')">Continuar</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="tituloInicial col-md-8 unfiled">
+                                <h1>Show <br> of Masa</h1>
+                            </div>
                         </div>
-                        <div class="tituloInicial col-md-8 unfiled">
-                            <h1>Show <br> of Massa</h1>
+                    </div>
+
+                    <div class="col-md-8" id="sobreJogo">
+                        <div class="col-md-12">
+                            <h2>Sobre</h2>
+                        </div>
+                        <div class="col-md-12 descricao">
+                            <p>O jogo Show Of Masa tem o intuito de que o jogador aprenda sobre as mudanças referentes a LGPD (Lei Geral de Proteção de Dados), esta que entrará em vigor em breve causando grande impacto nas empresas, já que serão necessárias
+                                muitas mudanças no que se diz respeito à dados pessoais de usuários, como por exemplo a conscientização e permissão dos mesmos para utilização e armazenamento destes registros. </p>
+                            <div class="voltarTelaInicial">
+                                <img src="img/return.png" onclick="mudarTela('sobreJogo', 'ladoDireitoInicial')" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8" id="manualJogo">
+                        <div class="col-md-12">
+                            <h2>Manual do Jogo</h2>
+                        </div>
+                        <div class="col-md-12 descricao">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin ligula quam, ac ultrices metus malesuada eu. Quisque convallis mauris et est vestibulum pellentesque. Nunc aliquam lorem id scelerisque euismod. Nam
+                                ut massa efficitur, lobortis turpis nec, luctus nisl. Fusce a eleifend urna, id congue ligula. Suspendisse aliquet urna risus, sed ullamcorper eros auctor et. Vivamus sodales, ante non tempor viverra, nunc enim pellentesque
+                                ex, ac sodales purus purus sed ipsum. Sed consequat vel dolor pulvinar facilisis. Morbi molestie fermentum quam, vel ultrices sapien vestibulum at. Integer ut molestie mauris. Curabitur quis odio est. Sed a facilisis dolor.
+                                Nam ex lectus, dignissim eget arcu vel, gravida mollis libero. Quisque et quam eget ipsum finibus porta vitae id diam. Mauris neque eros, ultrices vel porttitor at, imperdiet at dolor. Interdum et malesuada fames ac ante.</p>
+                            <div class="voltarTelaInicial">
+                                <img src="img/return.png" onclick="mudarTela('manualJogo', 'ladoDireitoInicial')" />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -96,15 +131,9 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
