@@ -191,40 +191,54 @@ a {
 
 /* TELA DIFICULDADE */
 
-.tituloDificuldades {
-    margin-top: 40px;
-    margin-left: 30px;
+.tituloDificuldades{
     font-family: sans-serif;
     font-size: 20px;
     color: #FFF6E4;
 }
 
-.selecaoDificuldade {
-    list-style: none;
-    color: #bd8d2a;
-    margin-bottom: 0px;
-    margin-top: 30px;
-    padding: 0;
+.tituloDificuldades img{
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    height: 50px;
+}
+
+.tituloDificuldades h2{
+   padding-top: 19px;
+}
+
+.ladoDireitoDificuldade{
     text-align: center;
 }
 
-.selecaoDificuldade li {
-    display: inline;
-    padding: 5px;
-    font-size: 25px;
-    margin: 0px 15px;
+.selecaoDificuldade{
+    list-style: none;
+    color:#bd8d2a;
+    margin-bottom: 0px;
+    margin-top: 55px;
+    text-align: center;
+    padding: 0 45px 25px 45px;
+    border-bottom: solid 1px #FFF6E4;
 }
 
-.selecaoDificuldade li:hover {
+.selecaoDificuldade li{
+    padding: 5px;
+    font-size: 25px;
+    margin-bottom: 20px;
+
+}
+
+.selecaoDificuldade li:hover{
     cursor: pointer;
     box-shadow: 0 8px 6px -6px black;
 }
 
-.btnDificuldade {
+.btnDificuldade{
     text-align: center;
 }
 
-.btnDificuldade button {
+.btnDificuldade button{
     background-color: transparent;
     border: 1px solid transparent;
     outline: none;
@@ -232,26 +246,63 @@ a {
     font-size: 35px;
     padding: 5px 15px;
     letter-spacing: 1px;
-    margin-top: 100px;
+    margin-top: 44px;
 }
 
-.btnDificuldade button:hover {
+.btnDificuldade button:hover{
     box-shadow: 0 5px 15px 3px black;
 }
 
-.ladoEsquerdoDificuldade {
-    background-color: #fdd163;
-    padding: 25px 30px;
+.ladoEsquerdoDificuldade{
+    background-color:#fdd163;
+    height: 600px;
 }
 
-.ladoEsquerdoDificuldade h2 {
-    margin: 0;
+.tituloDificuldadesEsquerdo h1 {
+    font-size: 50px;
+    font-family: sans-serif;
+    color: #302C49;
+    padding-top: 20px; 
+}
+
+.ladoEsquerdoDificuldade h2{
+    margin-top: 120px;
     text-transform: uppercase;
     font-size: 25px;
     color: #302C49;
     font-family: sans-serif;
 }
 
-.centroDificuldade {
-    margin-top: 150px;
+/* PERGUNTAS */
+.sessaoPerguntaRoxa{
+    background-color: #302C49;
+    margin-top: 40px;
+    height: 450px;
 }
+
+.sessaoPerguntaRoxa h1{
+    color: #FFF6E4;
+    text-align: center;
+    
+}
+
+.numeroPergunta{
+    position: absolute;
+    color: #494355;
+    margin-top: 20px;
+    font-size: 15px;
+    background-color: #F3DEA9;
+    top: 0;
+    left: 0;
+    width: 35px;
+    text-align: center;
+}
+
+.iconePergunta h3{
+    float: right;
+}
+
+.btnAjuda{
+    float: right;
+}
+
