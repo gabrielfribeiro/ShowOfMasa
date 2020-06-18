@@ -10,15 +10,26 @@ function mudarTela(idAtual, idFuturo) {
 function continuarDificuldade(idAtual, idFuturo) {
     var nome = document.getElementById("nomeJogador");
 
-    // var padrao = /[^a-zà-ú]/gi;
-
-    // var valida_nome = nome.matches(padrao);
-
-    console.log(nome.value);
-
     if (nome.value != "") {
         mudarTela(idAtual, idFuturo);
     } else {
         alert("Nome incorreto ou nao inserido!");
+    }
+}
+
+function modoJogo(nivel) {
+    switch (nivel) {
+        case 1:
+            alert('Modo facil');
+            break;
+        case 2:
+            alert('Modo medio');
+            break;
+        case 3:
+            alert('Modo dificil');
+            break;
+        case 4:
+            alert('Modo insano');
+            break;
     }
 }
