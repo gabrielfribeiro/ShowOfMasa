@@ -1,14 +1,10 @@
-function mudarTela(idAtual, idFuturo, condicao){
+function mudarTela(idAtual, idFuturo){
     var telaAtual = document.getElementById(idAtual);
     var telaFuturo = document.getElementById(idFuturo);
 
-    if(condicao == 1){
-        telaAtual.style.display = 'none';
-        telaFuturo.style.display = 'block';
-    }else{
-        telaAtual.style.display = 'block';
-        telaFuturo.style.display = 'none';
-    }
+    telaAtual.style.display = 'none';
+    telaFuturo.style.display = 'block';
+    
 }
 function modoJogo(nivel){
     switch(nivel){
