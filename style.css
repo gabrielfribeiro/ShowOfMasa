@@ -447,7 +447,7 @@ a {
 /* sessao ajuda */
 
 #sessaoAjuda{
-    display: block;
+    display: none;
     background-color: #302C49;
     height: 600px;
 }
