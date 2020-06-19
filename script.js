@@ -16,7 +16,7 @@ function continuarDificuldade(idAtual, idFuturo) {
     if (nome.value != "") {
         mudarTela(idAtual, idFuturo);
     } else {
-        alert("Nome incorreto ou nao inserido!");
+        alert("Nome incorreto ou não inserido!");
     }
 
     apresentaNome();
@@ -70,19 +70,43 @@ function modoJogo(nivel) {
     nivelDificuldade = nivel;
 }
 
+function apresentaDificuldade() {
+    var boxDificuldadeEscolhida = document.getElementById("boxNivelDificuldade");
+
+    switch (nivelDificuldade) {
+        case 1:
+            boxDificuldadeEscolhida.textContent = "MODO FÁCIL";
+            break;
+        case 2:
+            boxDificuldadeEscolhida.textContent = "MODO MÉDIO";
+            break;
+        case 3:
+            boxDificuldadeEscolhida.textContent = "MODO DIFÍCIL";
+            break;
+        case 4:
+            boxDificuldadeEscolhida.textContent = "MODO INSANO";
+            break;
+    }
+}
+
 function continuarJogar(idAtual, idFuturo) {
 
     if (nivelDificuldade) {
         mudarTela(idAtual, idFuturo);
+        apresentaDificuldade();
     } else {
         alert("Escolha uma dificuldade!");
     }
 }
 
-function terminarPartida() {
+function terminarPartida(tipoFinalizacao) {
 
-    if (confirm("Deseja realmente terminar a partida?")) {
-        mudarTela("sessaoPergunta", "sessaoInicial");
+    if (tipoFinalizacao == 1) {
+        if (confirm("Deseja realmente terminar a partida?")) {
+            location.reload();
+        }
+    } else {
+        location.reload();
     }
 }
 
@@ -92,12 +116,14 @@ function setResposta(numRespostaEscolhida) {
     var inputOpcao2 = document.getElementById("opcaoResposta2");
     var inputOpcao3 = document.getElementById("opcaoResposta3");
     var inputOpcao4 = document.getElementById("opcaoResposta4");
+    var inputOpcao5 = document.getElementById("opcaoResposta5");
 
     switch (numRespostaEscolhida) {
         case 1:
             inputOpcao2.classList.remove("repostaSelecionada");
             inputOpcao3.classList.remove("repostaSelecionada");
             inputOpcao4.classList.remove("repostaSelecionada");
+            inputOpcao5.classList.remove("repostaSelecionada");
 
             inputOpcao1.classList.add("repostaSelecionada");
             break;
@@ -105,6 +131,8 @@ function setResposta(numRespostaEscolhida) {
             inputOpcao1.classList.remove("repostaSelecionada");
             inputOpcao3.classList.remove("repostaSelecionada");
             inputOpcao4.classList.remove("repostaSelecionada");
+            inputOpcao5.classList.remove("repostaSelecionada");
+
 
             inputOpcao2.classList.add("repostaSelecionada");
             break;
@@ -112,6 +140,7 @@ function setResposta(numRespostaEscolhida) {
             inputOpcao1.classList.remove("repostaSelecionada");
             inputOpcao2.classList.remove("repostaSelecionada");
             inputOpcao4.classList.remove("repostaSelecionada");
+            inputOpcao5.classList.remove("repostaSelecionada");
 
             inputOpcao3.classList.add("repostaSelecionada");
             break;
@@ -119,8 +148,17 @@ function setResposta(numRespostaEscolhida) {
             inputOpcao1.classList.remove("repostaSelecionada");
             inputOpcao2.classList.remove("repostaSelecionada");
             inputOpcao3.classList.remove("repostaSelecionada");
+            inputOpcao5.classList.remove("repostaSelecionada");
 
             inputOpcao4.classList.add("repostaSelecionada");
+            break;
+        case 5:
+            inputOpcao1.classList.remove("repostaSelecionada");
+            inputOpcao2.classList.remove("repostaSelecionada");
+            inputOpcao3.classList.remove("repostaSelecionada");
+            inputOpcao4.classList.remove("repostaSelecionada");
+
+            inputOpcao5.classList.add("repostaSelecionada");
             break;
     }
 
@@ -131,10 +169,14 @@ function avancarPergunta() {
     if (!respostaEscolhida) {
         alert("Selecione uma opção de resposta!");
     } else if (respostaEscolhida == 4) {
-        alert("Parabéns você escolheu a resposta CORRETA! Obrigado por jogar, mais perguntas serão adicionadas em breve...");
-        mudarTela("sessaoPergunta", "sessaoInicial");
+        alert("Parabéns você escolheu a resposta CORRETA!\nObrigado por jogar, mais perguntas serão adicionadas em breve...\n\nVocê agora será redirecionado à página inicial.");
+        terminarPartida(0);
     } else {
-        alert("Mais sorte na próxima, você escolheu a resposta ERRADA! Obrigado por jogar, mais perguntas serão adicionadas em breve...");
-        mudarTela("sessaoPergunta", "sessaoInicial");
+        alert("Mais sorte na próxima, você escolheu a resposta ERRADA!\nObrigado por jogar, mais perguntas serão adicionadas em breve...\n\nVocê agora será redirecionado à página inicial.");
+        terminarPartida(0);
     }
+}
+
+function escolheAjuda() {
+    alert("As opções de ajuda serão implementadas nas próximas versões!");
 }
