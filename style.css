@@ -1,6 +1,19 @@
 body {
     font-family: sans-serif;
     outline: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-app-region: no-drag;
+    outline: none;
 }
 
 ::selection {
@@ -84,7 +97,11 @@ a {
 
 .linkSaibaMais:hover {
     background-color: #FFF6E4;
-    color: #bd8d2a;
+    color: #bd8d2a !important;
+}
+
+.linkSaibaMais:focus {
+    color: #bd8d2a !important;
 }
 
 .listaInicial {
@@ -231,9 +248,14 @@ a {
     margin-bottom: 20px;
 }
 
-.selecaoDificuldade li:hover {
+.dificuldadeLiberada:hover {
     cursor: pointer;
     box-shadow: 0 8px 6px -6px black;
+}
+
+.dificuldadeBloqueada {
+    text-decoration: line-through;
+    text-decoration-color: #FFF6E4;
 }
 
 .btnDificuldade {
@@ -445,27 +467,28 @@ a {
     color: #302C49;
 }
 
+
 /* sessao ajuda */
 
-#sessaoAjuda{
+#sessaoAjuda {
     display: none;
     background-color: #302C49;
     height: 600px;
 }
 
-.ladoEsquerdoAjuda{
+.ladoEsquerdoAjuda {
     background-color: #fdd163;
     height: 600px;
 }
 
-.tituloAjudaEsquerdo h1{
+.tituloAjudaEsquerdo h1 {
     font-size: 50px;
     font-family: sans-serif;
     color: #302C49;
     padding-top: 20px;
 }
 
-.tituloAjudaEsquerdo h2{
+.tituloAjudaEsquerdo h2 {
     margin-top: 120px;
     text-transform: uppercase;
     font-size: 25px;
@@ -473,32 +496,32 @@ a {
     font-family: sans-serif;
 }
 
-.tituloAjuda{
+.tituloAjuda {
     font-family: sans-serif;
     font-size: 20px;
     color: #FFF6E4;
 }
 
-.tituloAjuda h2{
+.tituloAjuda h2 {
     text-align: center;
     padding-top: 19px;
 }
 
-.iconeCreditosAjuda{
+.iconeCreditosAjuda {
     float: right;
     position: absolute;
     top: 39px;
     right: 30px;
 }
 
-.iconeCreditosAjuda img{
+.iconeCreditosAjuda img {
     height: 30px;
     position: absolute;
     top: 0px;
     right: 45px;
 }
 
-.iconeCreditosAjuda span{
+.iconeCreditosAjuda span {
     position: absolute;
     top: -2px;
     right: 5px;
@@ -535,14 +558,14 @@ a {
     box-shadow: 0 8px 6px -6px black;
 }
 
-.iconeCreditosAjudaIndividual img{
+.iconeCreditosAjudaIndividual img {
     height: 30px;
     position: absolute;
     top: 8px;
     right: -60px;
 }
 
-.iconeCreditosAjudaIndividual span{
+.iconeCreditosAjudaIndividual span {
     position: absolute;
     top: 10px;
     right: -56px;

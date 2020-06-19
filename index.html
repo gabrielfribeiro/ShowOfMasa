@@ -75,16 +75,10 @@
                             <h2>Manual do Jogo</h2>
                         </div>
                         <div class="col-md-12 descricao">
-                            <p>O jogo é um Quiz no qual cada pergunta terá 4 alternativas como resposta e apenas 1 é
-                                verdadeira, caso acerte irá ganhar uma quantidade de pontos e créditos, caso erre, irá
-                                perder pontos e será dado game over. Os créditos serão usados para comprar alguma das 5
-                                ajudas existentes (quando disponível).
-                                Há 4 dificuldades: fácil, médio, difícil e insano. Cada dificuldades tem suas perguntas
-                                e possuem suas facilidades e dificuldades no ganho de créditos e pontos, no caso do modo
-                                insano, não há ganho algum de créditos.
-                                Entre uma pergunta e outra será possível escolher se o jogador quer continuar (correndo
-                                o risco de perder pontos se errar a questão) ou parar ali (permanecer com a pontuação
-                                atual). Na pergunta final, não será possível usar nenhum tipo de ajuda. <br> BOM JOGO !
+                            <p>O jogo é um Quiz no qual cada pergunta terá 4 alternativas como resposta e apenas 1 é verdadeira, caso acerte irá ganhar uma quantidade de pontos e créditos, caso erre, irá perder pontos e será dado game over. Os créditos serão
+                                usados para comprar alguma das 5 ajudas existentes (quando disponível). Há 4 dificuldades: fácil, médio, difícil e insano. Cada dificuldades tem suas perguntas e possuem suas facilidades e dificuldades no ganho de créditos
+                                e pontos, no caso do modo insano, não há ganho algum de créditos. Entre uma pergunta e outra será possível escolher se o jogador quer continuar (correndo o risco de perder pontos se errar a questão) ou parar ali (permanecer
+                                com a pontuação atual). Na pergunta final, não será possível usar nenhum tipo de ajuda. <br> BOM JOGO !
                             </p>
                             <div class="voltarTelaInicial">
                                 <img src="img/return.png" onclick="mudarTela('manualJogo', 'ladoDireitoInicial')" alt="" />
@@ -106,8 +100,7 @@
                         <div class="centroDificuldade col-md-12 unfiled">
                             <div class="tituloDificuldades col-md-12 ">
                                 <header>
-                                    <img src="img/return.png" alt=""
-                                        onclick="mudarTela('sessaoDificuldade', 'sessaoInicial')">
+                                    <img src="img/return.png" alt="" onclick="mudarTela('sessaoDificuldade', 'sessaoInicial')">
                                     <h2>Olá,
                                         <span id="nomeInserido"></span>, seja bem vindo !</h2>
                                 </header>
@@ -115,18 +108,17 @@
                             <div class="col-md-12">
                                 <div class="col-md-4 col-md-offset-4">
                                     <ul class="selecaoDificuldade">
-                                        <li onclick="modoJogo(1)" id="dfFacil">Fácil</li>
-                                        <li onclick="modoJogo(2)" id="dfMedio">Médio</li>
-                                        <li onclick="modoJogo(3)" id="dfDificil">Difícil</li>
-                                        <li onclick="modoJogo(4)" id="dfInsano">Insano</li>
+                                        <li id="dfFacil" class="dificuldadeBloqueada">Fácil</li>
+                                        <li id="dfMedio" class="dificuldadeBloqueada">Médio</li>
+                                        <li onclick="modoJogo(3)" class="dificuldadeLiberada" id="dfDificil">Difícil</li>
+                                        <li id="dfInsano" class="dificuldadeBloqueada">Insano</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <footer class="btnDificuldade">
-                        <button type="button"
-                            onclick="continuarJogar('sessaoDificuldade', 'sessaoPergunta')">Jogar</button>
+                        <button type="button" onclick="continuarJogar('sessaoDificuldade', 'sessaoPergunta')">Jogar</button>
                     </footer>
                 </section>
 
@@ -171,10 +163,10 @@
                         <div class="btnAvancarPergunta" onclick="avancarPergunta()">AVANÇAR</div>
                     </div>
                     <div class="col-md-2">
-                        <div class="boxNivelDificuldade">MODO FÁCIL</div>
+                        <div class="boxNivelDificuldade" id="boxNivelDificuldade"></div>
                         <div class="btnAjuda" onclick="mudarTela('sessaoPergunta', 'sessaoAjuda')">AJUDA?</div>
                     </div>
-                    <div class="btnTerminarPartida" onclick="terminarPartida()">TERMINAR<br/> PARTIDA</div>
+                    <div class="btnTerminarPartida" onclick="terminarPartida(1)">TERMINAR<br/> PARTIDA</div>
                 </section>
 
                 <!-- Tela ajuda -->
@@ -189,13 +181,13 @@
                         <div class="centroAjuda col-md-12 unfiled">
                             <div class="tituloAjuda col-md-12">
                                 <header>
-                                    <div class="returnAjuda">
+                                    <div class="returnAjuda" onclick="mudarTela('sessaoAjuda', 'sessaoPergunta')">
                                         <img src="img/return.png" alt="">
                                     </div>
                                     <h2>Quando a LGPD foi sancionada ?</h2>
                                     <div class="iconeCreditosAjuda">
                                         <img src="img/money.png" alt="">
-                                        <span>10</span>
+                                        <span>0</span>
                                     </div>
                                 </header>
                             </div>
@@ -203,28 +195,25 @@
                         <div class="col-md-12">
                             <div class="col-md-8 col-md-offset-2">
                                 <ul class="selecaoAjuda">
-                                    <li>Eliminar Alternativa
+                                    <li onclick="escolheAjuda()">Eliminar Alternativa
                                         <div class="iconeCreditosAjudaIndividual">
                                             <img src="img/money.png" alt="">
                                             <span>05</span>
                                         </div>
                                     </li>
-
-                                    <li>Responder Depois
+                                    <li onclick="escolheAjuda()">Responder Depois
                                         <div class="iconeCreditosAjudaIndividual">
                                             <img src="img/money.png" alt="">
                                             <span>10</span>
                                         </div>
                                     </li>
-
-                                    <li>Pular Pergunta
+                                    <li onclick="escolheAjuda()">Pular Pergunta
                                         <div class="iconeCreditosAjudaIndividual">
                                             <img src="img/money.png" alt="">
                                             <span>20</span>
                                         </div>
                                     </li>
-
-                                    <li>Espionar Pergunta 
+                                    <li onclick="escolheAjuda()">Espionar Pergunta
                                         <div class="iconeCreditosAjudaIndividual">
                                             <img src="img/money.png" alt="">
                                             <span>15</span>
