@@ -12,7 +12,7 @@ a {
 }
 
 #sessaoInicial {
-    display: none;
+    display: block;
     height: 600px;
 }
 
@@ -285,7 +285,7 @@ a {
 
 #sessaoPergunta {
     background-color: #fdd163;
-    display: block;
+    display: none;
     height: 600px;
     overflow: hidden;
 }
