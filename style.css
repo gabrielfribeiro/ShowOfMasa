@@ -408,7 +408,8 @@ a {
     cursor: pointer;
 }
 
-.listaPerguntas li:hover {
+.listaPerguntas li:hover,
+.repostaSelecionada {
     box-shadow: 0 5px 15px 3px black;
 }
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Show of Massa</title>
+    <title>Show of Masa</title>
     <link rel="shortcut icon" href="img/cyber-security.png" type="image/x-icon" />
     <script src="script.js"></script>
 </head>
@@ -142,30 +142,30 @@
                         <div class="boxPerguntas">
                             <h1>Quando a LGPD foi sancionada ?</h1>
                             <ol class="listaPerguntas">
-                                <li><span>A</span>
+                                <li onclick="setResposta(1)" id="opcaoResposta1"><span>A</span>
                                     <p>28 de Agosto 2018</p>
                                 </li>
-                                <li><span>B</span>
-                                    <p>28 de Agosto 2018</p>
+                                <li onclick="setResposta(2)" id="opcaoResposta2"><span>B</span>
+                                    <p>29 de Dezembro 2018</p>
                                 </li>
-                                <li><span>C</span>
-                                    <p>28 de Agosto 2018</p>
+                                <li onclick="setResposta(3)" id="opcaoResposta3"><span>C</span>
+                                    <p>28 de Agosto 2019</p>
                                 </li>
-                                <li><span>D</span>
-                                    <p>28 de Agosto 2018</p>
+                                <li onclick="setResposta(4)" id="opcaoResposta4"><span>D</span>
+                                    <p>14 de Agosto 2018</p>
                                 </li>
-                                <li><span>E</span>
-                                    <p>28 de Agosto 2018</p>
+                                <li onclick="setResposta(5)" id="opcaoResposta5"><span>E</span>
+                                    <p>15 de Outubro 2018</p>
                                 </li>
                             </ol>
                         </div>
-                        <div class="btnAvancarPergunta">AVANÇAR</div>
+                        <div class="btnAvancarPergunta" onclick="avancarPergunta()">AVANÇAR</div>
                     </div>
                     <div class="col-md-2">
                         <div class="boxNivelDificuldade">MODO FÁCIL</div>
-                        <div class="btnAjuda">AJUDA?</div>
+                        <div class="btnAjuda" onclick="mudarTela('sessaoPergunta', 'sessaoAjuda')">AJUDA?</div>
                     </div>
-                    <div class="btnTerminarPartida">TERMINAR<br/> PARTIDA</div>
+                    <div class="btnTerminarPartida" onclick="terminarPartida()">TERMINAR<br/> PARTIDA</div>
                 </section>
             </div>
         </div>
