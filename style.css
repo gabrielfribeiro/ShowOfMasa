@@ -12,7 +12,7 @@ a {
 }
 
 #sessaoInicial {
-    display: none;
+    display: block;
     height: 600px;
 }
 
