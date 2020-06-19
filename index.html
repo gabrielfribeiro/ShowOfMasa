@@ -75,10 +75,17 @@
                             <h2>Manual do Jogo</h2>
                         </div>
                         <div class="col-md-12 descricao">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin ligula quam, ac ultrices metus malesuada eu. Quisque convallis mauris et est vestibulum pellentesque. Nunc aliquam lorem id scelerisque euismod. Nam
-                                ut massa efficitur, lobortis turpis nec, luctus nisl. Fusce a eleifend urna, id congue ligula. Suspendisse aliquet urna risus, sed ullamcorper eros auctor et. Vivamus sodales, ante non tempor viverra, nunc enim pellentesque
-                                ex, ac sodales purus purus sed ipsum. Sed consequat vel dolor pulvinar facilisis. Morbi molestie fermentum quam, vel ultrices sapien vestibulum at. Integer ut molestie mauris. Curabitur quis odio est. Sed a facilisis dolor.
-                                Nam ex lectus, dignissim eget arcu vel, gravida mollis libero. Quisque et quam eget ipsum finibus porta vitae id diam. Mauris neque eros, ultrices vel porttitor at, imperdiet at dolor. Interdum et malesuada fames ac ante.</p>
+                            <p>O jogo é um Quiz no qual cada pergunta terá 4 alternativas como resposta e apenas 1 é
+                                verdadeira, caso acerte irá ganhar uma quantidade de pontos e créditos, caso erre, irá
+                                perder pontos e será dado game over. Os créditos serão usados para comprar alguma das 5
+                                ajudas existentes (quando disponível).
+                                Há 4 dificuldades: fácil, médio, difícil e insano. Cada dificuldades tem suas perguntas
+                                e possuem suas facilidades e dificuldades no ganho de créditos e pontos, no caso do modo
+                                insano, não há ganho algum de créditos.
+                                Entre uma pergunta e outra será possível escolher se o jogador quer continuar (correndo
+                                o risco de perder pontos se errar a questão) ou parar ali (permanecer com a pontuação
+                                atual). Na pergunta final, não será possível usar nenhum tipo de ajuda. <br> BOM JOGO !
+                            </p>
                             <div class="voltarTelaInicial">
                                 <img src="img/return.png" onclick="mudarTela('manualJogo', 'ladoDireitoInicial')" alt="" />
                             </div>
@@ -99,7 +106,8 @@
                         <div class="centroDificuldade col-md-12 unfiled">
                             <div class="tituloDificuldades col-md-12 ">
                                 <header>
-                                    <img src="img/return.png" alt="" onclick="mudarTela('sessaoDificuldade', 'sessaoInicial')">
+                                    <img src="img/return.png" alt=""
+                                        onclick="mudarTela('sessaoDificuldade', 'sessaoInicial')">
                                     <h2>Olá,
                                         <span id="nomeInserido"></span>, seja bem vindo !</h2>
                                 </header>
@@ -117,7 +125,8 @@
                         </div>
                     </div>
                     <footer class="btnDificuldade">
-                        <button type="button" onclick="continuarJogar('sessaoDificuldade', 'sessaoPergunta')">Jogar</button>
+                        <button type="button"
+                            onclick="continuarJogar('sessaoDificuldade', 'sessaoPergunta')">Jogar</button>
                     </footer>
                 </section>
 
@@ -166,6 +175,65 @@
                         <div class="btnAjuda" onclick="mudarTela('sessaoPergunta', 'sessaoAjuda')">AJUDA?</div>
                     </div>
                     <div class="btnTerminarPartida" onclick="terminarPartida()">TERMINAR<br/> PARTIDA</div>
+                </section>
+
+                <!-- Tela ajuda -->
+                <section id="sessaoAjuda" class="col-md-12 unfiled">
+                    <div class="ladoEsquerdoAjuda col-md-4">
+                        <div class="tituloAjudaEsquerdo col-md-12">
+                            <h1>Show <br> of Masa</h1>
+                            <h2>Escolha uma das ajudas ao lado</h2>
+                        </div>
+                    </div>
+                    <div class="ladoDireitoAjuda col-md-8">
+                        <div class="centroAjuda col-md-12 unfiled">
+                            <div class="tituloAjuda col-md-12">
+                                <header>
+                                    <div class="returnAjuda">
+                                        <img src="img/return.png" alt="">
+                                    </div>
+                                    <h2>Quando a LGPD foi sancionada ?</h2>
+                                    <div class="iconeCreditosAjuda">
+                                        <img src="img/money.png" alt="">
+                                        <span>10</span>
+                                    </div>
+                                </header>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-8 col-md-offset-2">
+                                <ul class="selecaoAjuda">
+                                    <li>Eliminar Alternativa
+                                        <div class="iconeCreditosAjudaIndividual">
+                                            <img src="img/money.png" alt="">
+                                            <span>05</span>
+                                        </div>
+                                    </li>
+
+                                    <li>Responder Depois
+                                        <div class="iconeCreditosAjudaIndividual">
+                                            <img src="img/money.png" alt="">
+                                            <span>10</span>
+                                        </div>
+                                    </li>
+
+                                    <li>Pular Pergunta
+                                        <div class="iconeCreditosAjudaIndividual">
+                                            <img src="img/money.png" alt="">
+                                            <span>20</span>
+                                        </div>
+                                    </li>
+
+                                    <li>Espionar Pergunta 
+                                        <div class="iconeCreditosAjudaIndividual">
+                                            <img src="img/money.png" alt="">
+                                            <span>15</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
