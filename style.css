@@ -1,5 +1,10 @@
 body {
     font-family: sans-serif;
+    outline: none;
+}
+
+::selection {
+    background: transparent;
 }
 
 a {
@@ -7,17 +12,8 @@ a {
 }
 
 #sessaoInicial {
-    display: block;
-}
-
-#sessaoDificuldade {
     display: none;
-    background-color: #302C49;
     height: 600px;
-}
-
-#sessaoPergunta {
-    display: none;
 }
 
 .container-fluid {
@@ -191,30 +187,37 @@ a {
 
 /* TELA DIFICULDADE */
 
-.tituloDificuldades{
+#sessaoDificuldade {
+    display: none;
+    background-color: #302C49;
+    height: 600px;
+}
+
+.tituloDificuldades {
     font-family: sans-serif;
     font-size: 20px;
     color: #FFF6E4;
 }
 
-.tituloDificuldades img{
+.tituloDificuldades img {
     position: absolute;
     top: 30px;
     left: 15px;
     height: 50px;
+    cursor: pointer;
 }
 
-.tituloDificuldades h2{
-   padding-top: 19px;
+.tituloDificuldades h2 {
+    padding-top: 19px;
 }
 
-.ladoDireitoDificuldade{
+.ladoDireitoDificuldade {
     text-align: center;
 }
 
-.selecaoDificuldade{
+.selecaoDificuldade {
     list-style: none;
-    color:#bd8d2a;
+    color: #bd8d2a;
     margin-bottom: 0px;
     margin-top: 55px;
     text-align: center;
@@ -222,23 +225,22 @@ a {
     border-bottom: solid 1px #FFF6E4;
 }
 
-.selecaoDificuldade li{
+.selecaoDificuldade li {
     padding: 5px;
     font-size: 25px;
     margin-bottom: 20px;
-
 }
 
-.selecaoDificuldade li:hover{
+.selecaoDificuldade li:hover {
     cursor: pointer;
     box-shadow: 0 8px 6px -6px black;
 }
 
-.btnDificuldade{
+.btnDificuldade {
     text-align: center;
 }
 
-.btnDificuldade button{
+.btnDificuldade button {
     background-color: transparent;
     border: 1px solid transparent;
     outline: none;
@@ -249,12 +251,12 @@ a {
     margin-top: 44px;
 }
 
-.btnDificuldade button:hover{
+.btnDificuldade button:hover {
     box-shadow: 0 5px 15px 3px black;
 }
 
-.ladoEsquerdoDificuldade{
-    background-color:#fdd163;
+.ladoEsquerdoDificuldade {
+    background-color: #fdd163;
     height: 600px;
 }
 
@@ -262,10 +264,10 @@ a {
     font-size: 50px;
     font-family: sans-serif;
     color: #302C49;
-    padding-top: 20px; 
+    padding-top: 20px;
 }
 
-.ladoEsquerdoDificuldade h2{
+.ladoEsquerdoDificuldade h2 {
     margin-top: 120px;
     text-transform: uppercase;
     font-size: 25px;
@@ -273,36 +275,171 @@ a {
     font-family: sans-serif;
 }
 
+.dificuldadeSelecionada,
+.dificuldadeSelecionada:hover {
+    box-shadow: 0 5px 15px 3px black !important;
+}
+
+
 /* PERGUNTAS */
-.sessaoPerguntaRoxa{
-    background-color: #302C49;
-    margin-top: 40px;
-    height: 450px;
+
+#sessaoPergunta {
+    background-color: #fdd163;
+    display: block;
+    height: 600px;
+    overflow: hidden;
 }
 
-.sessaoPerguntaRoxa h1{
-    color: #FFF6E4;
-    text-align: center;
-    
+.iconePergunta h3 {
+    float: right;
 }
 
-.numeroPergunta{
+.iconePontos,
+.iconeCreditos {
     position: absolute;
-    color: #494355;
-    margin-top: 20px;
+    top: 15px;
+    font-size: 25px;
+    color: #FFF6E4;
+}
+
+.iconePergunta img {
+    height: 35px;
+    float: left;
+    margin-right: 10px;
+}
+
+.iconeCreditos img {
+    margin-right: 15px;
+}
+
+.iconePontos {
+    left: 15px;
+}
+
+.iconeCreditos {
+    left: 100px;
+}
+
+.boxNivelDificuldade {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    background-color: #302C49;
+    padding: 15px 25px;
+    color: #FFF6E4;
     font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btnAjuda {
+    position: absolute;
+    top: 85px;
+    right: 0;
     background-color: #F3DEA9;
-    top: 0;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #302C49;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btnAjuda:hover {
+    box-shadow: 0 0px 15px 5px black;
+    cursor: pointer;
+}
+
+.btnTerminarPartida {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    border: solid 2px #302C49;
+    padding: 5px 15px;
+    color: #302C49;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btnTerminarPartida:hover {
+    cursor: pointer;
+    background-color: #302C49;
+    color: #fdd163;
+}
+
+.sessaoPerguntaRoxa {
+    background-color: #302C49;
+    height: 465px;
+    margin-top: 65px;
+    color: #FFF6E4;
+}
+
+.sessaoPerguntaRoxa h1 {
+    padding-left: 50px;
+}
+
+.numeroPergunta {
+    position: absolute;
+    top: 20px;
     left: 0;
     width: 35px;
+    padding: 5px;
+    background-color: #F3DEA9;
+    color: #494355;
+    font-size: 18px;
     text-align: center;
+    font-weight: bold;
 }
 
-.iconePergunta h3{
-    float: right;
+.listaPerguntas {
+    margin-top: 25px;
+    padding: 0 50px;
+    list-style: none;
 }
 
-.btnAjuda{
-    float: right;
+.listaPerguntas li {
+    float: left;
+    width: 100%;
+    margin-top: 25px;
+    font-size: 25px;
+    cursor: pointer;
 }
 
+.listaPerguntas li:hover {
+    box-shadow: 0 5px 15px 3px black;
+}
+
+.listaPerguntas li span {
+    float: left;
+    background-color: #fdd163;
+    padding: 0 10px;
+    color: #302C49;
+    font-size: 25px;
+}
+
+.listaPerguntas li p {
+    float: left;
+    margin: 0 0 0 25px;
+}
+
+.btnAvancarPergunta {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border: solid 2px #fdd163;
+    padding: 5px 15px;
+    color: #fdd163;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.btnAvancarPergunta:hover {
+    cursor: pointer;
+    background-color: #fdd163;
+    color: #302C49;
+}
