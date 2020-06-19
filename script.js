@@ -1,3 +1,6 @@
+var nivelDificuldade;
+var respostaEscolhida;
+
 function mudarTela(idAtual, idFuturo) {
 
     var telaAtual = document.getElementById(idAtual);
@@ -26,12 +29,7 @@ function apresentaNome() {
     nomeInserido.textContent = nome.value;
 }
 
-var nivelDificuldade;
-
 function modoJogo(nivel) {
-
-
-    nivelDificuldade = nivel;
 
     var dfFacil = document.getElementById("dfFacil");
     var dfMedio = document.getElementById("dfMedio");
@@ -68,6 +66,8 @@ function modoJogo(nivel) {
             dfInsano.classList.add("dificuldadeSelecionada");
             break;
     }
+
+    nivelDificuldade = nivel;
 }
 
 function continuarJogar(idAtual, idFuturo) {
@@ -75,6 +75,66 @@ function continuarJogar(idAtual, idFuturo) {
     if (nivelDificuldade) {
         mudarTela(idAtual, idFuturo);
     } else {
-        alert('Escolha uma dificuldade!');
+        alert("Escolha uma dificuldade!");
+    }
+}
+
+function terminarPartida() {
+
+    if (confirm("Deseja realmente terminar a partida?")) {
+        mudarTela("sessaoPergunta", "sessaoInicial");
+    }
+}
+
+function setResposta(numRespostaEscolhida) {
+
+    var inputOpcao1 = document.getElementById("opcaoResposta1");
+    var inputOpcao2 = document.getElementById("opcaoResposta2");
+    var inputOpcao3 = document.getElementById("opcaoResposta3");
+    var inputOpcao4 = document.getElementById("opcaoResposta4");
+
+    switch (numRespostaEscolhida) {
+        case 1:
+            inputOpcao2.classList.remove("repostaSelecionada");
+            inputOpcao3.classList.remove("repostaSelecionada");
+            inputOpcao4.classList.remove("repostaSelecionada");
+
+            inputOpcao1.classList.add("repostaSelecionada");
+            break;
+        case 2:
+            inputOpcao1.classList.remove("repostaSelecionada");
+            inputOpcao3.classList.remove("repostaSelecionada");
+            inputOpcao4.classList.remove("repostaSelecionada");
+
+            inputOpcao2.classList.add("repostaSelecionada");
+            break;
+        case 3:
+            inputOpcao1.classList.remove("repostaSelecionada");
+            inputOpcao2.classList.remove("repostaSelecionada");
+            inputOpcao4.classList.remove("repostaSelecionada");
+
+            inputOpcao3.classList.add("repostaSelecionada");
+            break;
+        case 4:
+            inputOpcao1.classList.remove("repostaSelecionada");
+            inputOpcao2.classList.remove("repostaSelecionada");
+            inputOpcao3.classList.remove("repostaSelecionada");
+
+            inputOpcao4.classList.add("repostaSelecionada");
+            break;
+    }
+
+    respostaEscolhida = numRespostaEscolhida;
+}
+
+function avancarPergunta() {
+    if (!respostaEscolhida) {
+        alert("Selecione uma opção de resposta!");
+    } else if (respostaEscolhida == 4) {
+        alert("Parabéns você escolheu a resposta CORRETA! Obrigado por jogar, mais perguntas serão adicionadas em breve...");
+        mudarTela("sessaoPergunta", "sessaoInicial");
+    } else {
+        alert("Mais sorte na próxima, você escolheu a resposta ERRADA! Obrigado por jogar, mais perguntas serão adicionadas em breve...");
+        mudarTela("sessaoPergunta", "sessaoInicial");
     }
 }
